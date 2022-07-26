@@ -3,10 +3,8 @@ import "./footer.scss"
 import Column from "./column";
 import Facebook from "../../../assets/svg/facebook";
 import Instagram from "../../../assets/svg/instagram";
+import {firstColumn, secondColumn, thirdColumn} from "./columnData";
 const Footer = () => {
-    const firstColumn = ['About us', 'Privacy&Security', 'Contact us'];
-    const secondColumn = ['Help center', 'FAQs'];
-    const thirdColumn = ['Edit profile', 'My orders'];
     return (
         <footer>
             <div className="container footer-wrapper">
