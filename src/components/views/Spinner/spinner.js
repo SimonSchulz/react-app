@@ -1,14 +1,15 @@
 import Spinner from 'react-bootstrap/Spinner';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 function LoadSpinner() {
     const style = {
-        position:"relative",
-        alignItems: 'center',
-        left: "50%"
-    }
+        display:"block",
+        width: 100,
+        height: 100,
+        margin:"auto"
+     }
     return (
-        <div style={style}>
-            <Spinner animation="border" role="status" style={{width:50, height: 50}}>
+        <div style={{padding: 100}}>
+            <Spinner animation="border" role="status" style={style}>
                 <span className="visually-hidden">Loading...</span>
             </Spinner>
         </div>
