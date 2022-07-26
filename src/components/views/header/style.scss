@@ -1,0 +1,54 @@
+nav{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .search-block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    svg{
+      margin-top: 10px;
+    }
+
+    .input-block{
+      position: relative;
+      margin-left: 90px;
+     justify-items: center;
+
+      input{
+        padding-left: 50px;
+        width: 500px;
+        height: 48px;
+        border: 2px solid #FF5D4F;
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+      .loupe{
+        position: absolute;
+        top: 15%;
+        left: 10px;
+      }
+    }
+  }
+  .user-block{
+    a{
+      font-size: 20px;
+      line-height: 27px;
+      font-weight: 700;
+      text-align: center;
+      color: #616161;
+      text-decoration: none;
+      &:first-child{
+        margin-right: 48px;
+      }
+    }
+  }
+
+
+
+
+}
