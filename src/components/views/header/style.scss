@@ -42,8 +42,8 @@ nav{
       text-align: center;
       color: #616161;
       text-decoration: none;
-      &:first-child{
-        margin-right: 48px;
+      &:nth-child(2){
+        margin: 0 48px;
       }
     }
   }

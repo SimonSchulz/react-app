@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route, Routes} from "react-router-dom";
 import BookPage from "./pages/bookPage/bookPage";
 import ErrorPage from "./pages/errorPage/errorPage";
+import SignUp from "./components/Forms/signup/signUp";
+import LogIn from "./components/Forms/login/logIn";
+
 
 
 function App() {
@@ -16,7 +19,9 @@ function App() {
           <Routes>
             <Route path='/' element={<AllBooksPage/>} />
             <Route path='/:bookID' element={<BookPage/>} />
-             <Route path='/*' element={<ErrorPage/>} />
+            <Route path='/signup' element={<SignUp/>} />
+            <Route path='/login' element={<LogIn/>} />
+            <Route path='/*' element={<ErrorPage/>} />
           </Routes>
           <Footer/>
       </>
