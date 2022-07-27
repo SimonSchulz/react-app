@@ -2,32 +2,52 @@ import React from 'react';
 import {Form, Formik} from "formik";
 import * as Yup from "yup";
 import {Input} from "../formElements/input";
-import "./logIn.scss"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {setUser} from "../../../redux/slices/userSlice/userSlice";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import "./form.scss"
 
 const LogIn = () => {
+    const dispatch = useDispatch();
+    const push = useNavigate();
+
+    const handleLogin = (value) => {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, value.email, value.password)
+            .then(({user}) => {
+                dispatch(setUser({
+                    email: user.email,
+                    id: user.uid,
+                    token: user.accessToken,
+                }));
+                push('/');
+            })
+            .catch(() => alert('Invalid user!'))
+    }
     return (
-        <div className="log-in-wrapper">
+        <div className="form-wrapper">
             <Formik
                 initialValues = {{
-                    name: '',
+                    email: '',
                     password: '',
                 }}
                 validationSchema = {Yup.object({
-                    name: Yup.string()
+                    email: Yup.string()
                         .min(5, 'too short username')
                         .required('required!'),
                     password: Yup.string()
                         .min(7, 'too short password!')
                         .required('required!'),
                 })}
-                onSubmit = {values => console.log(JSON.stringify(values, null, 2))}>
+                onSubmit = {values => handleLogin(values)}>
                 <Form className="form">
                     <h2>Log In to Fox Library</h2>
                     <Input
-                        label="username"
-                        id="name"
-                        name="name"
-                        type="text"
+                        label="email"
+                        id="email"
+                        name="email"
+                        type="email"
                         autoComplete="off"
                     />
                     <Input

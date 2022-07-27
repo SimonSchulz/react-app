@@ -1,16 +1,37 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage, useField } from 'formik';
 import * as Yup from 'yup';
-import "./signUp.scss"
 import {Input} from "../formElements/input";
 import {CheckBox} from "../formElements/checkBox";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {setUser} from "../../../redux/slices/userSlice/userSlice";
 
 
 
 const SignUp = () => {
-
+    const dispatch = useDispatch();
+    const push = useNavigate();
+    const handleRegister = (value) => {
+        dispatch(setUser({
+            name: value.name,
+            email: value.email,
+            birthday: value.birthday,
+        }));
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, value.email, value.password)
+            .then(({user}) => {
+                dispatch(setUser({
+                    id: user.uid,
+                    token: user.accessToken,
+                }));
+                push('/login');
+            })
+            .catch(console.error)
+    }
     return (
-        <div className="sign-up-wrapper">
+        <div className="form-wrapper">
         <Formik
             initialValues = {{
                 name: '',
@@ -37,8 +58,8 @@ const SignUp = () => {
                     .required('required!')
                     .oneOf([true], "required agrees")
             })}
-            onSubmit = {values => console.log(JSON.stringify(values, null, 2))}
-        >
+            onSubmit = {values => handleRegister(values)}>
+
             <Form className="form">
                 <h2>Welcome to Fox Library</h2>
                 <Input

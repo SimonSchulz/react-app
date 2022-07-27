@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import {useGetBooksByIdQuery} from "../../api/apiSlice";
+import {useGetBooksByIdQuery} from "../../redux/slices/api/apiSlice";
 import "./bookPage.scss"
 import ErrorMessage from "../../components/views/errorMessage/errorMessage";
 import LoadSpinner from "../../components/views/Spinner/spinner";
