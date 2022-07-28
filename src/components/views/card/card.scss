@@ -1,16 +1,55 @@
-.book-card{
-  margin: 16px;
-  height: 185px;
-  width: 256px;
-  display: flex;
-  color: black;
-
-  img{
-    margin: 0 5px;
+.card-wrapper{
+  position: relative;
+  .book-card{
+    margin: 16px;
     height: 185px;
-    width: 122px;
+    width: 268px;
+    display: flex;
+    color: black;
+    border: 2px solid rgba(97, 97, 97, 0.15);
+    border-radius: 8px;
+
+    img{
+      margin-right: 7px;
+      height: 185px;
+      width: 122px;
+      border-radius: 8px;
+    }
+
+    .card-info{
+      margin: 0 auto;
+      padding: 5px;
+      text-align: center;
+      .bookname{
+        margin-top: 5px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+      }
+      .author{
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #616161;
+      }
+
+    }
   }
-  p{
-    text-decoration: none;
+  button{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 110px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 2px solid #85C8EE;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
   }
+
 }

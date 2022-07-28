@@ -1,10 +1,43 @@
 .book-page-wrapper{
   margin: 100px auto;
-  width: 647px;
+  min-width: 800px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
   img{
     height: 457px;
     width: 300px;
+    margin-right: 40px;
   }
+  .book-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    h2{
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 54px;
+    }
+    h3{
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      color: #FF5D4F;
+    }
+    h4,h5{
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 38px;
+      color: #000000;
+    }
+    h5{
+      font-size: 20px;
+    }
+    p{
+      margin: 0px;
+
+    }
+  }
+
 }

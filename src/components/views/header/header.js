@@ -18,6 +18,9 @@ const Header = () => {
             </div>
             <div className='user-block'>
                 <NavLink to='/' style={style}>All Books</NavLink>
+                <NavLink to='/order' style={style}>My order</NavLink>
+            </div>
+            <div className='login-block'>
                 <NavLink to='/login' style={style}>Log in</NavLink>
                 <NavLink to='/signup' style={style}>Sign up</NavLink>
             </div>

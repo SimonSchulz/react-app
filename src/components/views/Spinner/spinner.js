@@ -1,5 +1,5 @@
 import Spinner from 'react-bootstrap/Spinner';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 function LoadSpinner() {
     const style = {
         width: 100,

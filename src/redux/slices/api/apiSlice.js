@@ -5,14 +5,11 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'https://gutendex.com/'}),
     tagTypes: ['Books'],
     endpoints: builder => ({
-        getBooks: builder.query({
-            query: () => 'books',
-            providesTags: ['Books']
-        }),
-        getBooksById: builder.query({
+        getBookById: builder.query({
             query: (id) => `books?ids=${id}`,
             providesTags: ['Book']
         }),
     })
 });
-export const {useGetBooksQuery,useGetBooksByIdQuery} = apiSlice;
+console.log(apiSlice)
+export const {useGetBookByIdQuery} = apiSlice;
