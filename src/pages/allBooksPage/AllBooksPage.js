@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "../../components/views/card/card";
-import {useGetBooksQuery} from "../../api/apiSlice"
+import {useGetBooksQuery} from "../../redux/slices/api/apiSlice"
 import LoadSpinner from "../../components/views/Spinner/spinner";
 import ErrorMessage from "../../components/views/errorMessage/errorMessage";
 import {Link} from "react-router-dom";

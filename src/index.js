@@ -5,9 +5,11 @@ import  store  from './redux/store';
 import App from './App';
 import {ErrorBoundary} from "./components/errorBoundary/errorBoundary";
 import {BrowserRouter} from "react-router-dom";
+import "./firebase";
+
+
 const container = document.getElementById('root');
 const root = createRoot(container);
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>

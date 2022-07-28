@@ -2,22 +2,24 @@ import React from 'react';
 import "./style.scss"
 import Logo from "../../../assets/svg/logo";
 import Loupe from "../../../assets/svg/loupe";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
+    const style = ({isActive})=>({'color': isActive? '#FF5D4F' : '#616161'})
     return (
         <div className="container">
         <nav>
             <div className='search-block'>
-                <Link to='/'><Logo/></Link>
+                <NavLink to='/'><Logo/></NavLink>
                 <div className="input-block">
                     <input type="text" placeholder='Search by author, title, name'/>
                     <div className="loupe"><Loupe/></div>
                 </div>
             </div>
             <div className='user-block'>
-                <a href="#">Log in</a>
-                <a href="#">Log up</a>
+                <NavLink to='/' style={style}>All Books</NavLink>
+                <NavLink to='/login' style={style}>Log in</NavLink>
+                <NavLink to='/signup' style={style}>Sign up</NavLink>
             </div>
         </nav>
         </div>
