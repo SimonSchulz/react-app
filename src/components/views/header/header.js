@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 const Header = () => {
     const style = ({isActive})=>({'color': isActive? '#FF5D4F' : '#616161'})
     return (
-        <div className="container">
+        <header className="container">
         <nav>
             <div className='search-block'>
                 <NavLink to='/'><Logo/></NavLink>
@@ -18,14 +18,14 @@ const Header = () => {
             </div>
             <div className='user-block'>
                 <NavLink to='/' style={style}>All Books</NavLink>
-                <NavLink to='/order' style={style}>My order</NavLink>
+                <NavLink to='/order' style={style}>My orders</NavLink>
             </div>
             <div className='login-block'>
                 <NavLink to='/login' style={style}>Log in</NavLink>
                 <NavLink to='/signup' style={style}>Sign up</NavLink>
             </div>
         </nav>
-        </div>
+        </header>
     );
 };
 

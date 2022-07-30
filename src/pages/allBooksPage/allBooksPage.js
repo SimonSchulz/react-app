@@ -4,7 +4,7 @@ import "./allBooks.scss"
 
 const AllBooksPage = () => {
     return (
-        <Page title={'All books'} id={[]}/>
+        <Page title={'All books'} />
     );
 };
 export default AllBooksPage;

@@ -9,7 +9,15 @@ export const apiSlice = createApi({
             query: (id) => `books?ids=${id}`,
             providesTags: ['Book']
         }),
+        getBooksByStr: builder.query({
+            query: (str) => `/books?search=${str}`,
+            providesTags: ['search']
+        }),
+        getBooksByPage: builder.query({
+            query: (page) => `https://gutendex.com/books/?page=${page}`,
+            providesTags: ['search']
+        }),
     })
 });
 console.log(apiSlice)
-export const {useGetBookByIdQuery} = apiSlice;
+export const {useGetBookByIdQuery,useGetBooksByStrQuery,useGetBooksByPageQuery, useLazyGetBooksByPageQuery} = apiSlice;

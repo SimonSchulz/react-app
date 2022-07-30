@@ -1,15 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./card.scss"
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import {useDispatch} from "react-redux";
-import {setOrder} from "../../../redux/slices/orderSlice/orderSlice";
+import {setOrder,removeOrder} from "../../../redux/slices/orderSlice/orderSlice";
+import store from "../../../redux/store";
 
 
 const Card = ({id, formats, title, authors}) => {
+    const storeId = store.getState().orderReducer;
+    const [ordered, setOrdered] = useState(storeId.indexOf(id)===-1)
     const dispatch = useDispatch();
+    let btnTitle = ordered ?  "order": "return";
     const handleOrderDispatch = (id) =>{
-        dispatch(setOrder(id));
+        if(storeId.indexOf(id)===-1){
+            dispatch(setOrder(id));
+            setOrdered(state=>!state);
+        } else {
+            dispatch(removeOrder(id));
+            setOrdered(state=>!state);
+        }
+
     }
     return (
         <div className="card-wrapper">
@@ -22,7 +33,7 @@ const Card = ({id, formats, title, authors}) => {
                     </div>
                 </div>
              </Link >
-            <button onClick={()=>handleOrderDispatch(id)}>available</button>
+            <button onClick={()=>handleOrderDispatch(id)}>{btnTitle}</button>
         </div>
     );
 };
