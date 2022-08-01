@@ -7,9 +7,29 @@ export const apiSlice = createApi({
     endpoints: builder => ({
         getBookById: builder.query({
             query: (id) => `books?ids=${id}`,
-            providesTags: ['Book']
+            providesTags: ['Book'],
+            transformResponse: (response) => {
+                const { results: books } = response;
+                return books;
+            },
+        }),
+        getBooksByStr: builder.query({
+            query: (str) => `/books?search=${str}`,
+            providesTags: ['search'],
+            transformResponse: (response) => {
+                const { results: books } = response;
+                return books;
+            },
+        }),
+        getBooksByPage: builder.query({
+            query: (page) => `https://gutendex.com/books/?page=${page}`,
+            providesTags: ['search'],
+            transformResponse: (response) => {
+                const { results: books } = response;
+                return books;
+            },
         }),
     })
 });
-console.log(apiSlice)
-export const {useGetBookByIdQuery} = apiSlice;
+
+export const {useGetBookByIdQuery,useGetBooksByPageQuery, useGetBooksByStrQuery} = apiSlice;

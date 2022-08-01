@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-const initialState = [];
+import {getLocalStorage} from "../../../utils/localeStorage";
+const initialState = getLocalStorage('order');
 
 const orderSlice = createSlice({
     name: 'order',

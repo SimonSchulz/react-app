@@ -1,6 +1,5 @@
 import React from 'react';
 import img from '../../../assets/img/error.jpg'
-import {Link} from "react-router-dom";
 const ErrorMessage = () => {
     const style = {
         display: 'block',

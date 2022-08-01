@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Page from "../../../pages/page/page";
 
 const Column = ({title, data}) => {
     return (

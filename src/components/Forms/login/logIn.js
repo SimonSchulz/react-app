@@ -2,29 +2,14 @@ import React from 'react';
 import {Form, Formik} from "formik";
 import * as Yup from "yup";
 import {Input} from "../formElements/input";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import {setUser} from "../../../redux/slices/userSlice/userSlice";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import "./form.scss"
+import {login} from "./loginFunc";
 
 const LogIn = () => {
     const dispatch = useDispatch();
     const push = useNavigate();
-
-    const handleLogin = (value) => {
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, value.email, value.password)
-            .then(({user}) => {
-                dispatch(setUser({
-                    email: user.email,
-                    id: user.uid,
-                    token: user.accessToken,
-                }));
-                push('/');
-            })
-            .catch(() => alert('Invalid user!'))
-    }
     return (
         <div className="form-wrapper">
             <Formik
@@ -40,7 +25,7 @@ const LogIn = () => {
                         .min(7, 'too short password!')
                         .required('required!'),
                 })}
-                onSubmit = {values => handleLogin(values)}>
+                onSubmit = {values => login(values, dispatch, push)}>
                 <Form className="form">
                     <h2>Log In to Fox Library</h2>
                     <Input

@@ -8,12 +8,12 @@ import LoadSpinner from "../../components/views/Spinner/spinner";
 import {View} from "./View";
 const BookPage = () => {
     const {bookID} = useParams();
-    const { data: books,isLoading,isError } = useGetBookByIdQuery(bookID);
+    const { data,isLoading,isError } = useGetBookByIdQuery(bookID);
     const error = isError ? <ErrorMessage/> : null;
     return (
     <>
         {error}
-        {isLoading ? <LoadSpinner/> : <View {...books.results[0]}/>}
+        {isLoading ? <LoadSpinner/> : <View {...data?.[0]}/>}
 
     </>
     );

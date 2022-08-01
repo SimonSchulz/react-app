@@ -16,8 +16,8 @@ const Footer = () => {
                 <div className="icon-wrapper">
                     <div className="icon-title">Stay connected</div>
                     <div>
-                        <a href=""><Instagram/></a>
-                        <a href=""><Facebook/></a>
+                        <a href="#"><Instagram/></a>
+                        <a href="#"><Facebook/></a>
                     </div>
                 </div>
             </div>
