@@ -14,11 +14,10 @@
   .book-wrapper{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     a{
       text-decoration: none;
     }
-
   }
   .order-btn{
     width: 122px;
@@ -31,16 +30,21 @@
     line-height: 16px;
     text-align: center;
   }
-  .show-more-btn{
+}
+.page-btn{
+  display: flex;
+  justify-content: space-between;
+  button{
     display: block;
-    margin: 20px auto 0;
-    width: 185px;
+    margin: 0 auto 10px;
+    width: 130px;
     height: 48px;
     background: #FF5D4F;
     border-radius: 8px;
     color: #FFFFFF;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
   }
+
 }

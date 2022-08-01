@@ -10,6 +10,7 @@ import ErrorPage from "./pages/errorPage/errorPage";
 import SignUp from "./components/Forms/signup/signUp";
 import LogIn from "./components/Forms/login/logIn";
 import OrderPage from "./pages/orderPage/orderPage";
+import {ErrorBoundary} from "./components/errorBoundary/errorBoundary";
 
 
 
@@ -17,14 +18,16 @@ function App() {
   return (
       <>
           <Header/>
-          <Routes>
-            <Route path='/' element={<AllBooksPage/>} />
-            <Route path='/order' element={<OrderPage/>} />
-            <Route path='/:bookID' element={<BookPage/>} />
-            <Route path='/signup' element={<SignUp/>} />
-            <Route path='/login' element={<LogIn/>} />
-            <Route path='/*' element={<ErrorPage/>} />
-          </Routes>
+          <ErrorBoundary>
+              <Routes>
+                <Route path='/' element={<AllBooksPage/>} />
+                <Route path='/order' element={<OrderPage/>} />
+                <Route path='/:bookID' element={<BookPage/>} />
+                <Route path='/signup' element={<SignUp/>} />
+                <Route path='/login' element={<LogIn/>} />
+                <Route path='/*' element={<ErrorPage/>} />
+              </Routes>
+           </ErrorBoundary>
           <Footer/>
       </>
 );

@@ -9,12 +9,11 @@ import {View} from "./View";
 const BookPage = () => {
     const {bookID} = useParams();
     const { data,isLoading,isError } = useGetBookByIdQuery(bookID);
-    console.log(data);
     const error = isError ? <ErrorMessage/> : null;
     return (
     <>
         {error}
-        {isLoading ? <LoadSpinner/> : <View {...data.results[0]}/>}
+        {isLoading ? <LoadSpinner/> : <View {...data?.[0]}/>}
 
     </>
     );
