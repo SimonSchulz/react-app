@@ -1,20 +1,14 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {getLocalStorage} from "../../../utils/localeStorage";
 
-const initialState = getLocalStorage("user");
+const initialState = getLocalStorage("user")?.name ? getLocalStorage('user'):{ isAuth: '', name: '',  email: '', birthday: '',  token: '', id: ''};
 
 const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setUser:(state, action)=>({ ...state, ...action.payload}),
-        removeUser:(state) =>{
-            state.name = null;
-            state.email = null;
-            state.birthday = null;
-            state.token = null;
-            state.id = null;
-        },
+        setUser:(state, action)=>({...state,...action.payload}),
+        removeUser:(state ) =>   state=initialState,
     },
 });
 

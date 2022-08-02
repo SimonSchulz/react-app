@@ -4,13 +4,12 @@ import * as Yup from 'yup';
 import {Input} from "../formElements/input";
 import {CheckBox} from "../formElements/checkBox";
 import {register} from "./register";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
 const SignUp = () => {
     const dispatch = useDispatch();
     const push = useNavigate();
-    const user = useSelector(state => state.userReducer)
     return (
         <div className="form-wrapper">
         <Formik
@@ -39,7 +38,7 @@ const SignUp = () => {
                     .required('required!')
                     .oneOf([true], "required agrees")
             })}
-            onSubmit = {values => register(values, dispatch,push, user)}>
+            onSubmit = {values => register(values, dispatch,push)}>
 
             <Form className="form">
                 <h2>Welcome to Fox Library</h2>
