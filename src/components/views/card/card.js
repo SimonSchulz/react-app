@@ -12,6 +12,7 @@ const Card = ({id, formats, title, authors}) => {
     const dispatch = useDispatch();
     let btnTitle = ordered ?  "order": "return";
     const style = {'background': ordered ? '#FF5D4F' : '#616161'};
+    const reg = /[,.!?;:()]/;
     const handleOrderDispatch = (id) =>{
         if(storeId.indexOf(id)===-1){
             dispatch(setOrder(id));
@@ -27,7 +28,7 @@ const Card = ({id, formats, title, authors}) => {
                 <div className="book-card">
                     <img src={formats['image/jpeg']} alt={title}/>
                     <div className="card-info">
-                        <p className="bookname">{title?.split(':')[0]}</p>
+                        <p className="bookname">{title?.split(reg)[0]}</p>
                         <p className="author">{authors[0]?.name}</p>
                     </div>
                 </div>
