@@ -21,7 +21,6 @@ const BookPage = () => {
     <>
         {error}
         {isLoading ? <LoadSpinner/> : <View {...data?.[0]}/>}
-
     </>
     );
 };
