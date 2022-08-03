@@ -24,7 +24,7 @@ const Card = ({id, formats, title, authors}) => {
     }
     return (
         <div className="card-wrapper">
-            <Link to={`/${id}`}>
+            <Link to={`/details/${id}`}>
                 <div className="book-card">
                     <img src={formats['image/jpeg']} alt={title}/>
                     <div className="card-info">

@@ -6,12 +6,6 @@ import ErrorMessage from "../../components/views/errorMessage/errorMessage";
 import LoadSpinner from "../../components/views/Spinner/spinner";
 const OrderPage = () => {
     const ids = useSelector(state => state.orderReducer.join());
-    const style = {
-        margin: "150px auto",
-        fontWeight: 600,
-        fontSize: 24,
-        color: '#B5B5B5'
-    }
     const {
         data,
         isLoading,
@@ -22,7 +16,7 @@ const OrderPage = () => {
         <>
             {error}
             {isLoading ? <LoadSpinner/> :
-            ids.length ===0 ? <h2 style={style}>Oops! You haven't added any book yet</h2> : <Page title={'My orders'} data={data}/>}
+            ids.length ===0 ? <h2 className="empty">Oops! You haven't added any book yet</h2> : <Page title={'My orders'} data={data}/>}
         </>
     );
 };
