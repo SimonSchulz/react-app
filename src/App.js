@@ -11,21 +11,21 @@ import SignUp from "./components/Forms/signup/signUp";
 import LogIn from "./components/Forms/login/logIn";
 import OrderPage from "./pages/orderPage/orderPage";
 import {ErrorBoundary} from "./components/errorBoundary/errorBoundary";
-import {useSelector} from "react-redux";
 import UserForm from "./components/Forms/user/userForm";
-
-
+import History from "./pages/history/history";
+import SearchPage from "./pages/search/searchPage";
 
 function App() {
-    const search = useSelector(state=> state.searchReducer);
   return (
       <>
           <Header/>
           <ErrorBoundary>
               <Routes>
-                <Route path='/' element={<AllBooksPage searchString={search}/>} />
+                <Route path='/' element={<AllBooksPage />} />
                 <Route path='/order' element={<OrderPage/>} />
-                <Route path='/:bookID' element={<BookPage/>} />
+                <Route path='/history' element={<History/>} />
+                <Route path='/details/:bookID' element={<BookPage/>} />
+                <Route path='/search/:searchString' element={<SearchPage/>} />
                 <Route path='/signup' element={<SignUp/>} />
                 <Route path='/login' element={<LogIn/>} />
                 <Route path='/user' element={<UserForm/>} />

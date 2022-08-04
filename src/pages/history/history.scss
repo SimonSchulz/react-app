@@ -1,0 +1,31 @@
+.clear-history{
+  margin: 30px auto;
+  background: #616161;
+  width: 130px;
+  height: 42px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+}
+.history-requests{
+  padding: 0 30px;
+  h2{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 27px;
+    color: #000000;
+  }
+  div{
+    margin: 10px 20px;
+    a{
+      color: #FF5D4F;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 38px;
+    }
+  }
+}

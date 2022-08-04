@@ -82,7 +82,7 @@ const UserForm = () => {
 
                 </Form>
             </Formik>
-            <button type="button" style={{margin:"20px auto"}} onClick={()=>{dispatch(removeUser()); push("/login");window.location.reload();}}>log out</button>
+            <button type="button" style={{margin:"40px auto", background:"black"}} onClick={()=>{dispatch(removeUser()); push("/login");window.location.reload();}}>log out</button>
         </div>
     )
 };

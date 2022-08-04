@@ -1,6 +1,10 @@
 import {setLocalStorage} from "../../../utils/localeStorage";
+import store from "../../store";
 
 export const userToLocalStorageMiddleware = () => (next) => (action) => {
+    store.subscribe(() => {
+        setLocalStorage('order', store.getState().orderReducer);
+    });
     if (action.type === "user/setUser") {
         setLocalStorage("user", action.payload)
     }

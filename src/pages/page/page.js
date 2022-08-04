@@ -14,7 +14,7 @@ const Page = ({title, data}) => {
             <h2>{title}</h2>
             <div className="book-wrapper">
                 {data.length===0?<h2 style={style}>{emptyDataMessage}</h2>:
-                 data?.map((item,i) =><Card key={item.id} {...item} />)}
+                 data?.map((item) =><Card key={item.id} {...item} />)}
             </div>
         </div>
     );
