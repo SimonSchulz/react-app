@@ -52,13 +52,14 @@ nav{
     .user-block {
       a {
         font-size: 20px;
+        margin-right: 20px;
         line-height: 27px;
         font-weight: 700;
         text-align: center;
         color: #616161;
         text-decoration: none;
-        &:nth-child(1) {
-          margin: 0 48px;
+        &:nth-child(4) {
+          margin: 0 ;
         }
       }
     }

@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {getLocalStorage} from "../../../utils/localeStorage";
-const initialState =  getLocalStorage("history") ? getLocalStorage('history'):{ids:[],search:[]};
-
+const initialState =  getLocalStorage("history");
+console.log(getLocalStorage("history"))
 const historySlice = createSlice({
     name: 'history',
     initialState: initialState,
     reducers: {
         addId : (state, action) => ({...state, ids:[action.payload, ...state.ids]}),
         addStringSearch:(state, action) => ({...state, search:[action.payload, ...state.search]}),
-        clearHistory:()=>initialState,
+        clearHistory:()=>({ids:[], search:[]}),
     },
 });
 

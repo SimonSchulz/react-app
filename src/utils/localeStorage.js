@@ -3,7 +3,9 @@ export const getLocalStorage = key => {
     if (data !== null) {
         return JSON.parse(data);
     }
-    return key==="user" ? {isAuth: null, name: null, email: null, birthday: null, token: null, id: null,} : [];
+    if(key==="order"){return [];};
+    if(key==="history"){return {ids:[],search:[]};};
+    return { isAuth: '', name: '',  email: '', birthday: '',  token: '', id: ''}
 }
 
 export const setLocalStorage = (key, data) => {

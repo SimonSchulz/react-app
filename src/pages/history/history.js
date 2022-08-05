@@ -18,18 +18,18 @@ const History = () => {
         data,
         isLoading,
         isError,
-    } = useGetBookByIdQuery(history.ids);
+    } = useGetBookByIdQuery(history?.ids);
     const error = isError ? <ErrorMessage/> : null;
     return (
         <div className='container'>
-            {history.ids.length ===0 && history.search.length ===0 ? null:<button className='clear-history' onClick={handleClearHistory} >clear history</button>}
-            {error}
-            {history.ids.length ===0 && history.search.length ===0 ?<h2 className="empty">Oops! History is empty</h2>:null}
+            {history?.ids?.length ===0 && history?.search?.length ===0 ? null:<button className='clear-history' onClick={handleClearHistory} >clear history</button>}
             {isLoading ? <LoadSpinner/> :
-                history.ids.length ===0 ? null : <Page title={'You looked at these books:'} data={data}/>}
+                history?.ids?.length ===0 ? null : <Page title={'You looked at these books:'} data={data}/>}
+            {error}
+            {!isLoading && history?.ids?.length ===0 && history?.search?.length ===0 ?<h2 className="empty">Oops! History is empty</h2>:null}
             <div className="history-requests">
-                {history.search.length !==0 ? <h2>Your requests:</h2>:null}
-                {history.search ? history.search.map(i=> <div key={i}><Link to={`/search/${i}`}>{i}</Link></div>)
+                {history?.search?.length !==0 ? <h2>Your requests:</h2>:null}
+                {history?.search ? history?.search.map(i=> <div key={i}><Link to={`/search/${i}`}>{i}</Link></div>)
                     : <h2 className="empty">You didn't search for anything</h2>}
             </div>
         </div>

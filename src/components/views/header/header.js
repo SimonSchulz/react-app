@@ -39,7 +39,7 @@ const Header = () => {
                 <div className='user-block'>
                     <NavLink to='/' style={style}>All Books</NavLink>
                     <NavLink to='/order' style={style}>My orders</NavLink>
-                    <NavLink to='/history' style={{...style, margin: "0 40px"}}>History</NavLink>
+                    <NavLink to='/history' style={style}>History</NavLink>
                     <NavLink to='/user' style={style}><img style={{width:"46px"}} src={avatar} alt="avatar"/></NavLink>
                 </div>:
                 <div className='login-block'>

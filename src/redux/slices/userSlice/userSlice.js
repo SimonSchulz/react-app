@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {getLocalStorage} from "../../../utils/localeStorage";
 
-const initialState = getLocalStorage("user")?.name ? getLocalStorage('user'):{ isAuth: '', name: '',  email: '', birthday: '',  token: '', id: ''};
+const initialState = getLocalStorage("user");
 
 const userSlice = createSlice({
     name: 'user',
