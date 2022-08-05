@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup";
 import {Input} from "../formElements/input";
-import {removeUser, setUser} from "../../../redux/slices/userSlice/userSlice";
+import {logOut, setUser} from "../../../redux/slices/userSlice/userSlice";
 import avatar from "../../../assets/svg/avatar.svg"
 import {useNavigate} from "react-router-dom";
 const UserForm = () => {
@@ -82,7 +82,7 @@ const UserForm = () => {
 
                 </Form>
             </Formik>
-            <button type="button" style={{margin:"40px auto", background:"black"}} onClick={()=>{dispatch(removeUser()); push("/login");window.location.reload();}}>log out</button>
+            <button type="button" style={{margin:"40px auto", background:"black"}} onClick={()=>{dispatch(logOut()); push("/login");window.location.reload();}}>log out</button>
         </div>
     )
 };

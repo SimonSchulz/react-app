@@ -6,8 +6,8 @@ import {setStringSearch} from "../../../redux/slices/searchSlice/searchSlice";
 import {useDispatch} from "react-redux";
 import debounce from 'lodash/debounce';
 import {useAuth} from "../../../hooks/useAuth";
+import avatar from "../../../assets/svg/avatar.svg"
 import "./style.scss"
-
 
 const Header = () => {
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Header = () => {
                     <NavLink to='/' style={style}>All Books</NavLink>
                     <NavLink to='/order' style={style}>My orders</NavLink>
                     <NavLink to='/history' style={{...style, margin: "0 40px"}}>History</NavLink>
-                    <NavLink to='/user' style={style}>My page</NavLink>
+                    <NavLink to='/user' style={style}><img style={{width:"46px"}} src={avatar} alt="avatar"/></NavLink>
                 </div>:
                 <div className='login-block'>
                     <NavLink to='/login' style={style}>Log in</NavLink>

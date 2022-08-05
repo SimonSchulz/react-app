@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-const initialState = {ids:[],search:[]}
+import {getLocalStorage} from "../../../utils/localeStorage";
+const initialState =  getLocalStorage("history") ? getLocalStorage('history'):{ids:[],search:[]};
 
 const historySlice = createSlice({
     name: 'history',

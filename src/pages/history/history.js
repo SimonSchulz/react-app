@@ -7,10 +7,13 @@ import {clearHistory} from "../../redux/slices/historySlice/historySlice";
 import ErrorMessage from "../../components/views/errorMessage/errorMessage";
 import {Link} from "react-router-dom";
 import "./history.scss"
+
 const History = () => {
     const dispatcn = useDispatch();
     const history = useSelector(state=>state.historyReducer);
-    const handleClearHistory=()=>dispatcn(clearHistory());
+    const handleClearHistory=()=>{
+        dispatcn(clearHistory());
+    }
     const {
         data,
         isLoading,
