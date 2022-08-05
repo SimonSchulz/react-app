@@ -14,6 +14,11 @@ import {ErrorBoundary} from "./components/errorBoundary/errorBoundary";
 import UserForm from "./components/Forms/user/userForm";
 import History from "./pages/history/history";
 import SearchPage from "./pages/search/searchPage";
+import columnData from "./components/views/footer/columnData";
+
+//example with context
+export const dataContext = React.createContext({});
+const {Provider} = dataContext;
 
 function App() {
   return (
@@ -32,7 +37,10 @@ function App() {
                 <Route path='/*' element={<ErrorPage/>} />
               </Routes>
            </ErrorBoundary>
-          <Footer/>
+          <Provider value={columnData} >
+              <Footer/>
+          </Provider>
+
       </>
 );
 }

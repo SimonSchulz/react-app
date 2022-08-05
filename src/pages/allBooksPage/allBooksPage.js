@@ -8,6 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setPage} from "../../redux/slices/pageSlice/pageSlice";
 
 const AllBooksPage = () => {
+    const startPage = 1;
     const page = useSelector(state=>state.pageReducer);
     const dispatch = useDispatch();
     const {
@@ -23,7 +24,7 @@ const AllBooksPage = () => {
             {error}
             {isLoading ?  <LoadSpinner/>   : <Page title={'All books'} data={data} />}
             <div className="page-btn">
-                {page===1? null :<button onClick={handlePrevPage} >previous page</button>}
+                {page===startPage ? null :<button onClick={handlePrevPage} >previous page</button>}
                 <button onClick={handleNextPage} >next page</button>
             </div>
         </>

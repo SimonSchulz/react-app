@@ -1,17 +1,19 @@
-import React from 'react';
-import "./footer.scss"
-import Column from "./column";
+import React, {useContext} from 'react';
 import Facebook from "../../../assets/svg/facebook";
 import Instagram from "../../../assets/svg/instagram";
-import {firstColumn, secondColumn, thirdColumn} from "./columnData";
+import {dataContext} from "../../../App";
+import Column from "./column";
+import "./footer.scss"
 const Footer = () => {
+    const {first, second, third} = useContext(dataContext);
+
     return (
         <footer>
             <div className="container footer-wrapper">
                 <div className="link-wrapper">
-                    <Column title='About Fox Library' data={firstColumn} />
-                    <Column title='Help' data={secondColumn} />
-                    <Column title='My account' data={thirdColumn} />
+                    <Column title='About Fox Library' data={first} />
+                    <Column title='Help' data={second} />
+                    <Column title='My account' data={third} />
                 </div>
                 <div className="icon-wrapper">
                     <div className="icon-title">Stay connected</div>

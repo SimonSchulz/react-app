@@ -10,7 +10,8 @@
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/pages/page/page.js">Page</a> )️
 <li> Реализована хотя бы одна форма. 
 ( <a href="https://github.com/SimonSchulz/react-app/tree/main/src/components/Forms">Forms</a> )️ 
-<li> Есть применение Контекст API. -️
+<li> Есть применение Контекст API. ️
+( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/components/views/footer/footer.js">useContext</a> )
 <li> Есть применение предохранителя.  
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/components/errorBoundary/errorBoundary.js">Предохранитель</a> )️
 <li> Есть хотя бы один кастомный хук. ️
@@ -28,16 +29,8 @@
 <li> Используем слайсы. ️
 ( <a href="https://github.com/SimonSchulz/react-app/tree/main/src/redux/slices">Slices</a> )
 <li> Есть хотя бы одна кастомная мидлвара. 
-( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/slices/userSlice/userMiddleWare.js">MiddleWare</a> )️
+( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/storageMiddleWare.js">MiddleWare</a> )️
 <li> Используется RTK Query. ️
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/slices/api/apiSlice.js">RTK Query</a> )
 <li> Используется Transforming Responses.   
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/slices/api/apiSlice.js">Transforming Responses</a> )
-
-# 2 уровень (необязательный)
-
-<li> Проведена оптимизация приложения. -
-<li> Используются мемоизированные селекторы. -
-<li> Используется нормализованная структура стейта.  -
-<li> Подключен storybook и созданы несколько сторисов. ️-
-<li> Использование TypeScript. ️-

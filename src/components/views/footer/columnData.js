@@ -1,3 +1,6 @@
-export const firstColumn = ['About us', 'Privacy&Security', 'Contact us'];
-export const secondColumn = ['Help center', 'FAQs'];
-export const thirdColumn = ['Edit profile', 'My orders'];
+const columnData = {
+    first: ['About us', 'Privacy&Security', 'Contact us'],
+    second: ['Help center', 'FAQs'],
+    third: ['Edit profile', 'My orders']
+}
+export default columnData
