@@ -34,3 +34,4 @@
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/slices/api/apiSlice.js">RTK Query</a> )
 <li> Используется Transforming Responses.   
 ( <a href="https://github.com/SimonSchulz/react-app/blob/main/src/redux/slices/api/apiSlice.js">Transforming Responses</a> )
+
