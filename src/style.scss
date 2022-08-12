@@ -1,12 +1,10 @@
 @import "/src/assets/fonts/OpenSans/fonts.css";
 @import "assets/fonts/OpenSans/fonts.css";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-
 }
 #root{
   min-height: 100vh;
@@ -15,10 +13,9 @@
   justify-content: space-between;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 0 15px;
-
 }
 .empty{
   margin: 150px auto;
