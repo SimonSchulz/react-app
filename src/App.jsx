@@ -9,7 +9,7 @@ import ErrorPage from './pages/errorPage/errorPage';
 import SignUp from './components/Forms/signup/signUp';
 import LogIn from './components/Forms/login/logIn';
 import OrderPage from './pages/orderPage/orderPage';
-import { ErrorBoundary } from './components/errorBoundary/errorBoundary';
+import ErrorBoundary from './components/errorBoundary/errorBoundary';
 import UserForm from './components/Forms/user/userForm';
 import History from './pages/history/history';
 import SearchPage from './pages/search/searchPage';

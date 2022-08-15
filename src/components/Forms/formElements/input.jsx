@@ -16,9 +16,10 @@ function Input({ label, ...props }) {
 export default Input;
 Input.propTypes = {
   label: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
   props: PropTypes.objectOf(PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
-  ])).isRequired,
+  ])),
   name: PropTypes.string.isRequired,
 };

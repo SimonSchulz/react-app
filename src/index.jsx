@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store';
 import App from './App';
-import { ErrorBoundary } from './components/errorBoundary/errorBoundary';
+import ErrorBoundary from './components/errorBoundary/errorBoundary';
 import './firebase';
 
 const container = document.getElementById('root');

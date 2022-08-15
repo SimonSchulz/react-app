@@ -1,44 +1,28 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  ErrorMessage, Field, Form, Formik,
-} from 'formik';
-import * as Yup from 'yup';
+import { ErrorMessage, Form, Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import Input from '../formElements/input';
 import { logOut, setUser } from '../../../redux/slices/userSlice/userSlice';
 import avatar from '../../../assets/svg/avatar.svg';
+import userValidation from './userValidation';
+import MyDatePicker from '../formElements/DatePicker';
 
 function UserForm() {
   const dispatch = useDispatch();
   const push = useNavigate();
-  const {
-    name, email, birthday, password,
-  } = useSelector((state) => state.userReducer);
+  const { name, email, password } = useSelector((state) => state.userReducer);
+  const birthdate = new Date(useSelector((state) => state.userReducer.birthdate));
   return (
     <div className="form-wrapper">
       <Formik
         initialValues={{
           name,
           email,
-          birthday,
           password,
+          birthdate,
         }}
-        validationSchema={Yup.object({
-          name: Yup.string()
-            .min(5, 'too short username')
-            .required('required!'),
-          email: Yup.string()
-            .email('Invalid email')
-            .required('required!'),
-          password: Yup.string()
-            .min(7, 'too short password!')
-            .required('required!'),
-          birthday: Yup.string()
-            .min(8, 'too short, need format dd.mm.yyyy')
-            .max(10, 'too long, need format dd.mm.yyyy')
-            .required('required!'),
-        })}
+        validationSchema={userValidation}
         onSubmit={(values) => dispatch(setUser(values))}
       >
         <Form className="form">
@@ -64,11 +48,9 @@ function UserForm() {
             type="text"
             autoComplete="off"
           />
-          <label htmlFor="birthday">Your birthdate</label>
-          <Field
-            id="birthday"
-            name="birthday"
-            type="text"
+          <MyDatePicker
+            label="Your birthdate"
+            name="birthdate"
             autoComplete="off"
           />
           <ErrorMessage component="div" className="error" name="birthday" />
@@ -86,10 +68,10 @@ function UserForm() {
             type="password"
             autoComplete="off"
           />
-          <button type="submit" style={{ margin: '20px auto' }}>save</button>
+          <button type="submit" className="submit-btn" style={{ margin: '20px auto' }}>save</button>
         </Form>
       </Formik>
-      <button type="button" style={{ margin: '40px auto', background: 'black' }} onClick={() => { dispatch(logOut()); push('/login'); window.location.reload(); }}>log out</button>
+      <button type="button" className="submit-btn" style={{ margin: '40px auto', background: 'black' }} onClick={() => { dispatch(logOut()); push('/login'); window.location.reload(); }}>log out</button>
     </div>
   );
 }

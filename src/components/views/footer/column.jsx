@@ -7,8 +7,8 @@ function Column({ title, data }) {
     <div className="column">
       <div className="title">{title}</div>
       <ul className="footer-list">
-        {data.map((el, i) => (
-          <li key={i}>
+        {data.map((el) => (
+          <li key={el}>
             {' '}
             <Link to="/">{el}</Link>
             {' '}

@@ -8,9 +8,9 @@ const register = (value, dispatch, navigate) => {
       dispatch(signUp({
         name: value.name,
         email: value.email,
-        birthday: value.birthday,
         password: value.password,
         id: user.uid,
+        birthdate: value.birthdate.toString(),
         token: user.accessToken,
       }));
       navigate('/login');

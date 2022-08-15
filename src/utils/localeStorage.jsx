@@ -6,7 +6,7 @@ export const getLocalStorage = (key) => {
   if (key === 'order') { return []; }
   if (key === 'history') { return { ids: [], search: [] }; }
   return {
-    isAuth: '', name: '', email: '', birthday: '', token: '', id: '',
+    isAuth: '', name: '', email: '', token: '', id: '', birthdate: '',
   };
 };
 

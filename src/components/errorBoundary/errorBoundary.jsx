@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import ErrorMessage from '../views/errorMessage/errorMessage';
 
-export class ErrorBoundary extends Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { children } = this.props;
+    if (hasError) {
       return <ErrorMessage />;
     }
 
-    return this.props.children;
+    return children;
   }
 }
+export default ErrorBoundary;

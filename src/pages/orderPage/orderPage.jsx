@@ -13,11 +13,11 @@ function OrderPage() {
     isError,
   } = useGetBookByIdQuery(ids);
   const error = isError ? <ErrorMessage /> : null;
+  const load = isLoading ? <LoadSpinner /> : null;
   return (
     <>
       {error}
-      {isLoading ? <LoadSpinner />
-        : ids.length === 0 ? <h2 className="empty">Oops! You haven't added any book yet</h2> : <Page title="My orders" data={data} />}
+      {load || ids.length === 0 ? <h2 className="empty">Oops! You haven&apos;t added any book yet</h2> : <Page title="My orders" data={data} />}
     </>
   );
 }

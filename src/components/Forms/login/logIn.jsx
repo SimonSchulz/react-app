@@ -1,11 +1,12 @@
 import React from 'react';
 import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
+
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Input from '../formElements/input';
 import './form.scss';
 import login from './loginFunc';
+import loginValidation from './loginValidation';
 
 function LogIn() {
   const dispatch = useDispatch();
@@ -17,14 +18,7 @@ function LogIn() {
           email: '',
           password: '',
         }}
-        validationSchema={Yup.object({
-          email: Yup.string()
-            .min(5, 'too short username')
-            .required('required!'),
-          password: Yup.string()
-            .min(7, 'too short password!')
-            .required('required!'),
-        })}
+        validationSchema={loginValidation}
         onSubmit={(values) => login(values, dispatch, push)}
       >
         <Form className="form">
@@ -43,7 +37,7 @@ function LogIn() {
             type="password"
             autoComplete="off"
           />
-          <button type="submit">Log in</button>
+          <button type="submit" className="submit-btn">Log in</button>
         </Form>
       </Formik>
     </div>

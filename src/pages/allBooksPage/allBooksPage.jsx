@@ -13,7 +13,7 @@ function AllBooksPage() {
   const dispatch = useDispatch();
   const {
     data,
-    isLoading,
+    isFetching,
     isError,
   } = useGetBooksByPageQuery(page);
   const handlePrevPage = () => dispatch(setPage(page - 1));
@@ -22,7 +22,7 @@ function AllBooksPage() {
   return (
     <>
       {error}
-      {isLoading ? <LoadSpinner /> : <Page title="All books" data={data} />}
+      {isFetching ? <LoadSpinner /> : <Page title="All books" data={data} />}
       <div className="page-btn">
         {page === startPage ? null : <button type="button" onClick={handlePrevPage}>previous page</button>}
         <button type="button" onClick={handleNextPage}>next page</button>

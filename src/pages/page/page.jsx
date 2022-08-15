@@ -14,7 +14,7 @@ function Page({ title, data }) {
       <div className="page-wrapper">
         <h2>{title}</h2>
         <div className="book-wrapper">
-          {data.length === 0 ? <h2 style={style}>{emptyDataMessage}</h2>
+          {data?.length === 0 ? <h2 style={style}>{emptyDataMessage}</h2>
           // eslint-disable-next-line react/jsx-props-no-spreading
             : data?.map((item) => <Card key={item.id} {...item} />)}
         </div>
